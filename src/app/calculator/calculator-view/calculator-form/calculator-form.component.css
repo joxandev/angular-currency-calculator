@@ -1,0 +1,12 @@
+.currencySelector {
+  display: flex;
+}
+
+.qty {
+  width: 80px;
+  clear: none;
+}
+
+.field div {
+  margin-right: 15px;
+}

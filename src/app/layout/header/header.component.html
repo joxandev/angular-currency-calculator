@@ -1,0 +1,51 @@
+<nav class="navbar" role="navigation" aria-label="main navigation" *ngIf="navViewModel$ | async as vm">
+  <div class="navbar-brand">
+    <a routerLink="" class="navbar-item">
+      <span class="logo"><i class="fas fa-coins is-size-2"></i></span>
+
+    </a>
+    <a routerLink="" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+      data-target="navbarBasicExample">
+      <span aria-hidden="true">
+            </span>
+      <span aria-hidden="true">
+            </span>
+      <span aria-hidden="true">
+            </span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu ">
+    <div class="navbar-start">
+      <a routerLink="" class="navbar-item">
+        Home
+      </a>
+      <a [routerLink]="['/admin/edit']" class="navbar-item" *ngIf="vm.isAuth">
+        Edit Currency Values
+      </a>
+
+
+    </div>
+    <div class="navbar-end">
+      <ng-template #signout>
+        <div class="navbar-item">
+          <div class="buttons">
+            <button type="button" class="button is-primary is-rounded bold" (click)="signOut()">Sign out</button>
+          </div>
+        </div>
+      </ng-template>
+
+      <div class="navbar-item">
+        <div class="buttons" *ngIf="!vm.isAuth; else signout">
+          <a [routerLink]="['/admin/signup']" class="button is-light is-rounded">
+            <strong>
+                            Sign up
+                        </strong>
+          </a>
+          <a [routerLink]="['/admin/signin']" class="button is-primary is-rounded">
+            Log in
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

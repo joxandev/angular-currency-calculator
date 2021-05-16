@@ -1,0 +1,39 @@
+<ng-container *ngIf="currencyConversionData$ | async as currencyConversion">
+  <nav class="level">
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading description has-text-primary">Exchange Rate</p>
+        <p class="title currencyConversion">
+          {{currencyConversion.value | currency:currencyConversion.currency
+          :'symbol-narrow':'1.4-4'}}
+        </p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading description has-text-primary">TIMES</p>
+        <p class="title currencyConversion">{{currencyConversion.qty}}</p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading description has-text-primary">Total Price</p>
+        <p class="title currencyConversion">
+          {{currencyConversion.value | currencyExchange:[currencyConversion.qty]
+          | currency:currencyConversion.currency :'symbol-narrow':'1.4-4'}}
+        </p>
+      </div>
+    </div>
+  </nav>
+
+  <div
+    class="columns warning"
+    *ngIf="currencyConversion.base ===currencyConversion.currency"
+  >
+    <div
+      class="column is-three-fifths is-offset-one-fifth is-mobile notification is-danger is-size-4"
+    >
+      <p class="is-centered ">Please choose two different currencies</p>
+    </div>
+  </div>
+</ng-container>

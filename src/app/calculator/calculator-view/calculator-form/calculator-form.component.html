@@ -1,0 +1,27 @@
+<div class="currencySelector">
+  <ng-container *ngIf="currencyExchangeForm && currencySelectItems$ | async as currencyItems">
+
+    <form [formGroup]="currencyExchangeForm">
+      <div class="field is-horizontal">
+        <div class="select is-rounded is-big">
+          <select formControlName="currencyFrom">
+        <option [value]="item.value" *ngFor="let item of currencyItems">{{item.text}}</option>
+      </select>
+        </div>
+        <div class="field">
+          <button class="button is-link is-rounded" (click)="toggleCurrencies()"> <span class="icon is-small">
+      <i class="fas fa-exchange-alt"></i>
+    </span></button>
+        </div>
+        <div class="select is-rounded is-big">
+          <select formControlName="currencyTo" class="select is-rounded">
+        <option [value]="item.value" *ngFor="let item of currencyItems">{{item.text}}</option>
+      </select>
+        </div>
+        <div class="control qty">
+          <input class="input  is-rounded is-hovered has-text-centered"  type="number" formControlName="qty" />
+        </div>
+      </div>
+    </form>
+  </ng-container>
+</div>

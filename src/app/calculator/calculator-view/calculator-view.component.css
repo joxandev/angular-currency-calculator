@@ -1,0 +1,23 @@
+.calculatorBanner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  flex-basis: 1 3;
+}
+
+.calculatorBanner div {
+}
+.formCalculator {
+  
+  
+}
+
+.qty {
+  width: 80px;
+  clear: none;
+}
+
+.field div {
+  margin-right: 20px;
+}

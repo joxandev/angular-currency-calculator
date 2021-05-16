@@ -1,0 +1,17 @@
+.banner {
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.banner div {
+  display: flex;
+}
+
+.banner div.slot {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}

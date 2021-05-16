@@ -1,0 +1,10 @@
+<app-banner>
+  <h1 class="is-size-2 has-text-link mb-5">Currency Exchange Calculator</h1>
+  <div class="content">
+    <app-calculator-form (currencyExchangeFormChanges)="calculateExchangeRate($event)"></app-calculator-form>
+  </div>
+</app-banner>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
