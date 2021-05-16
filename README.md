@@ -1,4 +1,4 @@
-# Angular Currency Converter Application [Live Demo](http://angular-currency-calculator.surge.sh/dashboard)
+# Angular Currency Converter Application [Live Demo](http://angular-currency-calculator.surge.sh)
 
 ## Application Features
 
